@@ -1,0 +1,236 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('./src/img/body.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: "Magenta";
+    src: url("./src/fontes/Magenta/Magenta.ttf");
+}
+@font-face {
+    font-family: "Oswald";
+    src: url("./src/fontes/Oswald/Oswald-Medium.ttf");
+}
+
+h1 {
+    text-align: center;
+    text-indent: 2px;
+    letter-spacing: 2px;
+     font-family: 'Magenta';
+    font-style: oblique;
+    padding: 45px;
+    animation: fadeInOut 5s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+h2 {
+    font-family:'Oswald';
+    color: white;
+    letter-spacing: 1px;
+}
+
+.quadro-top {
+    margin-top: 0;
+    padding: 25px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha os itens no topo */
+    align-items: center;
+    background: rgba(117, 114, 114, 0.8);
+    height: 100vh;
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Borda do quadro */
+    border-radius: 15px; /* Bordas suavizadas */
+    padding: 20px;
+    border: 2px solid rgb(194, 182, 182); /* Adiciona borda de contorno cinza claro */
+
+}
+
+
+header {
+    background-image: url("./src/img/cabeçalho.jpg");
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    border-radius: 15px; /* Bordas suavizadas */
+    margin-bottom: 1rem;
+
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald';
+    font-size: 20px;
+
+}
+
+nav ul li a:hover {
+    background-color: rgba(189, 189, 197, 0.295);
+    transition-duration: 0.3s;
+    border-radius: 3px;
+
+}
+
+.barra-nav {
+    background-color: rgba(98, 98, 109, 0.301);
+    border-radius: 15px; /* Bordas suavizadas */
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Ajuste a altura conforme necessário */
+    overflow: hidden;
+    border-radius: 15px; /* Bordas suavizadas para o contêiner */
+    margin-bottom: 1rem;
+
+
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Adapta a imagem ao tamanho do contêiner */
+    border-radius: 15px; /* Bordas suavizadas para as imagens */
+
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+
+}
+
+button.prev {
+    left: 0;
+
+}
+
+button.next {
+    right: 0;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s ease;
+}
+
+footer {
+    background: linear-gradient(to right, rgb(81, 12, 192), rgb(138, 138, 150), rgb(66, 58, 58));
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px; /* Bordas suavizadas */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Borda do rodapé */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    margin: 0 1rem;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px; /* Tamanho dos ícones */
+    height: 24px; /* Tamanho dos ícones */
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Efeito ao passar o mouse */
+}
+
+footer h3 {
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 2rem 1rem;
+    }
+
+    .social-icons img {
+        width: 20px; /* Tamanho dos ícones para dispositivos menores */
+        height: 20px; /* Tamanho dos ícones para dispositivos menores */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
